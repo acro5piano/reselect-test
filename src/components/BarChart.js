@@ -5,11 +5,11 @@ import { select } from 'd3-selection'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  border: solid 1px #ccc;
-  padding: 24px;
+  border: solid 1px #eee;
   width: ${props => props.size}px;
   height: ${props => props.size}px;
   margin: 24px 0 0;
+  background: #fff;
 `
 
 const Buttons = styled.div`
@@ -84,7 +84,7 @@ export class BarChart extends React.Component {
     const { size } = this.state
 
     return (
-      <Container size={size + 24}>
+      <Container size={size + 100}>
         <Buttons>
           <button onClick={this.bigger}>bigger</button>
           <button onClick={this.smaller}>smaller</button>

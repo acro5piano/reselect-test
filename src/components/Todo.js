@@ -3,6 +3,13 @@ import { connect } from 'react-redux'
 import { ADD_TODO, TOGGLE_TODO } from '../redux'
 import { Todo } from '../models'
 import { createSelector } from 'reselect'
+import styled from 'styled-components'
+
+const Card = styled.div`
+  background: #fff;
+  padding: 24px;
+  border: solid 1px #eee;
+`
 
 const incompleteTodosSelector = state => state.todos.filter(todo => !todo.completed)
 
@@ -42,7 +49,7 @@ export const TodoPage = ({ todos, incompleteTodosCount, addTodo, toggleTodo }) =
   }
 
   return (
-    <div>
+    <Card>
       <div>{incompleteTodosCount} tasks remains.</div>
       {todos.map(todo => (
         <div key={todo.id} onClick={() => toggleTodo(todo.id)}>
@@ -51,7 +58,7 @@ export const TodoPage = ({ todos, incompleteTodosCount, addTodo, toggleTodo }) =
       ))}
       <input onChange={e => setValue(e.target.value)} value={value} />
       <button onClick={submit}>addTodo</button>
-    </div>
+    </Card>
   )
 }
 
