@@ -16,11 +16,14 @@ const Header = styled.div`
 const Title = styled.div`
   padding: 12px;
   line-height: 32px;
+  max-width: 1024px;
+  margin: auto;
 `
 
 const Body = styled.div`
   max-width: 1024px;
   padding: 24px;
+  margin: auto;
 `
 
 const App = () => (
