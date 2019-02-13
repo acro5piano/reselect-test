@@ -6,7 +6,9 @@
   "author": "gosho-kazuya <ketsume0211@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn webpack-dev-server --watch --progress"
+    "start": "webpack-dev-server --watch --progress",
+    "build": "webpack",
+    "deploy": "yarn build && aws s3 sync --acl public-read dist/ s3://gosho-experiments/reselect-test/"
   },
   "dependencies": {
     "d3": "^5.9.1",
